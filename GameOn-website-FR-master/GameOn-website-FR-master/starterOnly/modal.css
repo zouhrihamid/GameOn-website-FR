@@ -531,3 +531,12 @@ footer {
   color: #fe142f;
   font-style: italic;
 }
+
+.taille_alert{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3%;
+  font-size: 18px;
+  color:red;
+  font-style: italic;
+}
