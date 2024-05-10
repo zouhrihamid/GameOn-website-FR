@@ -14,7 +14,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="Logo.png"  >
     </div>
     <div class="main-navbar">
       
@@ -28,7 +28,7 @@
       </a>
     </div>
     </div>
-  </div>
+  
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -55,18 +55,15 @@
       <div class="bground">
         <div class="content">
           <span class="close"></span>
-          <!-- alert message -->
-          <p id="msgalert" class="taille_alert"> </p>
-          <button id="modal-confirm">Confirmer</button>'
-
+          <!--  Message of confirmation -->
+          <p id="msgalert" class="taille_mgs_conf"> </p>
+         
           <div class="modal-body">
-          
-            <form
+             <form
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return  [confirmation(event) ]"
-              
+                      novalidate
             > 
                <div
                 class="formData">
@@ -78,7 +75,7 @@
                   name="first"
                  /><br>
               </div>
-              
+              <!-- Balise message error first name -->
               <p id="msgfirst" class="taille_msg"> </p>
              <div
                 class="formData">
@@ -90,7 +87,7 @@
                   name="last"
                 /><br>
               </div>
-              
+              <!-- Balise message error last first name  -->
               <p id="msglast" class="taille_msg"> </p>
               
               
@@ -102,9 +99,10 @@
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                  placeholder="nom@domaine.com"
+                ><br>
               </div>
-
+              <!-- Balise message errorlast first name  -->
               <p id="msgemail" class="taille_msg"> </p>
               
               <div
@@ -115,15 +113,22 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                
+                ><br>
               </div>
+
+              <!-- Balise message error birthdate  -->
               <p id="msgdate" class="taille_msg"> </p>
+              
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity">
               </div>
+              
+              <!-- Balise message error number of competitions -->
               <p id="msgnbcompt" class="taille_msg"> </p>
+
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
@@ -194,6 +199,7 @@
                   Portland</label
                 >
               </div>
+              <!-- Balise message error championship -->
               <p id="mscheck" class="taille_msg"> </p>
 
 
@@ -204,11 +210,12 @@
                   type="checkbox"
                   id="checkbox1"
                     />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <!-- Balise message error terms and condition  -->
                 <p id="mscheckbox" class="taille_msg"> </p>
                 
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
@@ -219,12 +226,13 @@
                 <br>
               </div>
               <input
-                class="btn-submit"
-                type="submit"
-                class="button"
-                value="C'est parti"
-                       
-              />
+              class="btn-submit"
+              id="btnsubmit"
+              type="submit"
+              class="button"
+              value="C'est parti"
+              onsubmit="return validate_email(this)"
+            >
             </form> 
           </div>
         </div> 
@@ -236,8 +244,8 @@
       </p>
     </footer>
     <script src="modal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>   
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>    -->
 
   </body>
   
